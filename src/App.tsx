@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ThemeProvider } from "styled-components";
+import themes from "./themes/schema.json";
+import { useState, useEffect } from "react";
+import { GlobalStyles } from "./themes/globalStyles";
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/about";
+import Journey from "./pages/journey";
+import Projects from "./pages/projects";
+import Navbar from "./components/navbar/Navbar";
+import Landing from "./components/landing";
+import Footer from "./components/footer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme")?.length ?? -1 > 0
+      ? JSON.parse(localStorage.getItem("theme") as string)
+      : themes.dark
+  );
+
+  useEffect(() => {
+    if (!localStorage.getItem("theme")) {
+      localStorage.setItem("theme", JSON.stringify(themes.dark));
+    }
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Landing />
+      <Navbar setTheme={setTheme} />
+      <Routes>
+        <Route path="" element={<About />} />
+        <Route path="journey" element={<Journey />} />
+        <Route path="projects" element={<Projects />} />
+      </Routes>
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
