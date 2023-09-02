@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.colors.primary2};
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.secondary1} !important;
-    font-family: "Inter" ,Arial, Helvetica, sans-serif;
+    font-family: "Times New Roman" ,Arial, Helvetica, sans-serif;
     margin:0;
     &::-webkit-scrollbar-track
     {
@@ -30,10 +30,9 @@ export const GlobalStyles = createGlobalStyle`
           border-radius:10px;
           border: 3px solid ${({ theme }) => theme.colors.primary1};
       }
-      overflow:hidden;
   }
   button {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Times New Roman', sans-serif;
     text-transform: capitalize;
   }
 `;

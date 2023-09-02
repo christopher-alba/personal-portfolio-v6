@@ -1,7 +1,45 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+import TopLeft from "../graphics/corner-art/TopLeft";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import {
+  InvisibleButton,
+  NameTitle,
+  StyledArrowDownSVG,
+  StyledTulipSVG,
+  WrapperDiv,
+} from "./styled";
+import TopRight from "../graphics/corner-art/TopRight";
+import BottomLeft from "../graphics/corner-art/BottomLeft";
+import BottomRight from "../graphics/corner-art/BottomRight";
 
 const Landing: FC = () => {
-  return <div>Landing</div>;
+  const theme: DefaultTheme = useContext(ThemeContext) as DefaultTheme;
+  return (
+    <WrapperDiv>
+      <TopLeft
+        color1={theme.colors.secondary1}
+        color2={theme.colors.tertiary1}
+      />
+      <TopRight
+        color1={theme.colors.secondary1}
+        color2={theme.colors.tertiary1}
+      />
+      <BottomLeft
+        color1={theme.colors.secondary1}
+        color2={theme.colors.tertiary1}
+      />
+      <BottomRight
+        color1={theme.colors.secondary1}
+        color2={theme.colors.tertiary1}
+      />
+
+      <StyledTulipSVG />
+      <NameTitle>Christopher Sy Alba</NameTitle>
+      <InvisibleButton>
+        <StyledArrowDownSVG />
+      </InvisibleButton>
+    </WrapperDiv>
+  );
 };
 
 export default Landing;
