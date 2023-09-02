@@ -49,8 +49,21 @@ export const NameTitle = styled("h1")`
   font-size: 5rem;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 0;
   @media (max-width: 1000px) {
     font-size: 2.5rem;
   }
-  padding: 20px;
+  padding: 0 20px;
+`;
+
+export const SubTitle = styled("h2")`
+  font-size: 1.5;
+  color: ${({ theme }) => theme.colors.secondary2};
+  text-align: center;
+  @media (max-width: 1000px) {
+    font-size: 0.75;
+  }
+  padding: 0 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
 `;

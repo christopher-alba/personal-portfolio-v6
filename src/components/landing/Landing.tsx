@@ -6,6 +6,7 @@ import {
   NameTitle,
   StyledArrowDownSVG,
   StyledTulipSVG,
+  SubTitle,
   WrapperDiv,
 } from "./styled";
 import TopRight from "../graphics/corner-art/TopRight";
@@ -35,6 +36,7 @@ const Landing: FC = () => {
 
       <StyledTulipSVG />
       <NameTitle>Christopher Sy Alba</NameTitle>
+      <SubTitle>Professional Software Engineer</SubTitle>
       <InvisibleButton>
         <StyledArrowDownSVG />
       </InvisibleButton>
