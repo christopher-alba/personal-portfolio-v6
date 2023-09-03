@@ -10,6 +10,7 @@ export const WrapperDiv = styled("div")`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: ${({ theme }) => theme.colors.primary1};
 `;
 
 export const StyledTulipSVG = styled(TulipSVG)`
