@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Grad } from "../../svg/icons/gradIcon.svg";
 import { ReactComponent as Laptop } from "../../svg/icons/laptop.svg";
-import { SwordsHorizontalSVG } from "../../components/graphics/swords/styled";
 import SwordsHorizontal from "../../components/graphics/swords/SwordsHorizontal";
 
 export const WrapperDiv1 = styled("div")`
