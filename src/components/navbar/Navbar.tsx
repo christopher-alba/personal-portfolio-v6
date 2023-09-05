@@ -134,7 +134,7 @@ const Navbar: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
                 >
                   Download CV
                 </CVDownload>
-                <InvisibleButton onClick={toggleTheme}>
+                <InvisibleButton onClick={toggleTheme} style={{margin:"0 20px"}}>
                   {theme?.name === "light" ? (
                     <MoonShieldSVG />
                   ) : (

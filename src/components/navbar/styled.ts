@@ -25,7 +25,6 @@ export const MobileWrapper = styled("div")`
 const shieldSVGStyles = css`
   width: 40px;
   height: 40px;
-  cursor: pointer;
 `;
 
 export const SunShieldSVG = styled(SunShield)`
@@ -39,6 +38,7 @@ export const InvisibleButton = styled("button")`
   background: none;
   border: none;
   color: ${({ theme }) => theme.colors.secondary1};
+  cursor: pointer;
 `;
 
 export const LinksWrapper = styled("div")`
@@ -68,6 +68,7 @@ export const MainWrapper = styled("div")`
   right: 0;
   background: ${({ theme }) => theme.colors.primary1};
   padding: 20px 0;
+  z-index: 10000;
 `;
 export const BackToTopWrapper = styled("div")`
   width: 300px;
