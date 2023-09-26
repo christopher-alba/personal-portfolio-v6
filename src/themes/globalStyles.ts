@@ -5,7 +5,6 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x:hidden;
   }
   p {
-    font-size: 0.8rem;
     font-weight: 200;
   }
   body {
