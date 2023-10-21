@@ -96,8 +96,8 @@ export const TechItemsWrapper = styled("div")`
   margin-top: 50px;
 `;
 export const TechItemWrapper = styled("div")`
-  border-right: 20px solid ${({ theme }) => theme.colors.primary2};
-  border-bottom: 20px solid ${({ theme }) => theme.colors.primary2};
+  border-right: 20px solid ${({ theme }) => theme.colors.primary1};
+  border-bottom: 20px solid ${({ theme }) => theme.colors.primary1};
   width: 50%;
   box-sizing: border-box;
   display: flex;
