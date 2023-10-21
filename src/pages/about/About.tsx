@@ -1,11 +1,8 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect } from "react";
 import { Container } from "../../components/container";
 import { TitleMain } from "../../components/title";
 import {
   ContainerStyled,
-  GalleryColumnsWrapper,
-  GalleryImage,
-  GalleryWrapper,
   GradIcon,
   GradSVG,
   IconWrapper,
@@ -31,29 +28,13 @@ import SwordsVertical from "../../components/graphics/swords/SwordsVertical";
 import { DefaultTheme, ThemeContext } from "styled-components";
 import SwordsHorizontal from "../../components/graphics/swords/SwordsHorizontal";
 import tech from "./tech";
-import { galleryDark, galleryLight } from "./gallery";
 
 const About: FC = () => {
-  let columns: string[][] = [];
   const theme = useContext(ThemeContext) as DefaultTheme;
-  let gallery;
-  if (theme.name === "light") {
-    gallery = galleryLight;
-  } else {
-    gallery = galleryDark;
-  }
-  let columnItems: string[] = [];
-  let totalCount = gallery.length;
-  for (let i = 0; i < gallery.length; i++) {
-    const imageUrl = gallery[i];
-    columnItems.push(imageUrl);
-    totalCount--;
-    console.log(totalCount);
-    if (columnItems.length === 6 || totalCount === 0) {
-      columns = [...columns, columnItems];
-      columnItems = [];
-    }
-  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -192,17 +173,6 @@ const About: FC = () => {
           </TechItemsWrapper>
         </Container>
       </WrapperDiv4>
-      <Container>
-        <GalleryColumnsWrapper>
-          {columns.map((column) => (
-            <GalleryWrapper>
-              {column.map((imageUrl) => (
-                <GalleryImage src={imageUrl} />
-              ))}
-            </GalleryWrapper>
-          ))}
-        </GalleryColumnsWrapper>
-      </Container>
     </>
   );
 };

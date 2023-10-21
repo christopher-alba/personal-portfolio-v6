@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect } from "react";
 import { TitleMain } from "../../components/title";
 import { data } from "./data";
 import {
@@ -16,6 +16,9 @@ import { ThemeContext } from "styled-components";
 
 const Journey: FC = () => {
   const theme = useContext(ThemeContext);
+  useEffect(() => {
+    document.getElementsByClassName("invisible-marker")[0].scrollIntoView();
+  }, []);
   return (
     <Container className="start">
       <TitleMain>My Career Journey</TitleMain>

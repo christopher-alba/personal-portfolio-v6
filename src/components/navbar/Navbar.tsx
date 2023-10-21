@@ -7,6 +7,7 @@ import {
   CVDownload,
   DesktopWrapper,
   InvisibleButton,
+  InvisibleMarker,
   LinksWrapper,
   MainWrapper,
   MenuButton,
@@ -54,6 +55,7 @@ const Navbar: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   };
   return (
     <>
+      <InvisibleMarker className="invisible-marker" />
       <MainWrapper className="navbar">
         <Container>
           <DesktopWrapper>

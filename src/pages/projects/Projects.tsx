@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect } from "react";
 import { Container } from "../../components/container";
 import { TitleMain } from "../../components/title";
 import { projects } from "./data";
@@ -15,6 +15,9 @@ import { ThemeContext } from "styled-components";
 
 const Projects: FC = () => {
   const theme = useContext(ThemeContext);
+  useEffect(() => {
+    document.getElementsByClassName("invisible-marker")[0].scrollIntoView();
+  }, []);
   return (
     <Container>
       <TitleMain>My Personal Projects</TitleMain>

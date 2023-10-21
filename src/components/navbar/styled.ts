@@ -12,7 +12,10 @@ export const DesktopWrapper = styled("div")`
   align-items: center;
   justify-content: center;
 `;
-
+export const InvisibleMarker = styled("div")`
+  height: 1px;
+  width: 100%;
+`;
 export const MobileWrapper = styled("div")`
   @media (min-width: 800px) {
     display: none;
