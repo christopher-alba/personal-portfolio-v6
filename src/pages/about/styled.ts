@@ -60,10 +60,14 @@ export const WrapperDiv4 = styled("div")``;
 export const TechInfo = styled("div")`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 export const StyledP = styled("p")`
   width: 52%;
   margin-top: 0;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 const iconStyles = css`
   width: 18.4px;
@@ -97,6 +101,10 @@ export const TechItemWrapper = styled("div")`
   width: 50%;
   box-sizing: border-box;
   display: flex;
+  @media (max-width: 600px) {
+    width: 100%;
+    border-right: none;
+  }
 `;
 
 export const TechItemLeft = styled("div")`
