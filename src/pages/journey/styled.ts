@@ -9,7 +9,6 @@ const companyWrapperStyles = css`
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-  border: 10px solid ${({ theme }) => theme.colors.secondary1};
 
   @media (max-width: 1000px) {
     width: 80%;
@@ -27,13 +26,14 @@ export const ContainerStyled = styled(Container)`
 `;
 
 export const CurrentCompanyWrapper = styled("div")`
-  background: ${({ theme }) => theme.colors.tertiary1};
   ${companyWrapperStyles}
+  border: 10px solid ${({ theme }) => theme.colors.tertiary1};
 `;
 
 export const CompanyWrapper = styled("div")`
   ${companyWrapperStyles}
   background: ${({ theme }) => theme.colors.primary1};
+  border: 10px solid ${({ theme }) => theme.colors.secondary1};
 `;
 
 export const TechWrapper = styled("div")`

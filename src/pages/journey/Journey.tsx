@@ -25,7 +25,7 @@ const Journey: FC = () => {
             <CurrentCompanyWrapper>
               <ContainerStyled>
                 <H2Styled>{company.dateString}</H2Styled>
-                <H2Styled style={{ color: theme?.colors.primary1 }}>
+                <H2Styled style={{ color: theme?.colors.tertiary1 }}>
                   {company.position}
                 </H2Styled>
                 <H2Styled>{company.nameShort}</H2Styled>
