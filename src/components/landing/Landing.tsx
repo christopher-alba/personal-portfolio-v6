@@ -15,6 +15,12 @@ import BottomRight from "../graphics/corner-art/BottomRight";
 
 const Landing: FC = () => {
   const theme: DefaultTheme = useContext(ThemeContext) as DefaultTheme;
+  const onDownArrowClick = () => {
+    const target = document.getElementsByClassName("navbar")[0];
+    target.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <WrapperDiv>
       <TopLeft
@@ -37,7 +43,7 @@ const Landing: FC = () => {
       <StyledTulipSVG />
       <NameTitle>Christopher Sy Alba</NameTitle>
       <SubTitle>Professional Software Engineer</SubTitle>
-      <InvisibleButton>
+      <InvisibleButton onClick={onDownArrowClick}>
         <StyledArrowDownSVG />
       </InvisibleButton>
     </WrapperDiv>

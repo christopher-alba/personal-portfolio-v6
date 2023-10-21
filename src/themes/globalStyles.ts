@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.colors.primary2};
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.secondary1} !important;
-    font-family: "Times New Roman" ,Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin:0;
     &::-webkit-scrollbar-track
     {
@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
       }
   }
   button {
-    font-family: 'Times New Roman', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
   }
 `;

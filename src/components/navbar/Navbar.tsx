@@ -54,7 +54,7 @@ const Navbar: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   };
   return (
     <>
-      <MainWrapper>
+      <MainWrapper className="navbar">
         <Container>
           <DesktopWrapper>
             <LinksWrapper>
@@ -134,7 +134,10 @@ const Navbar: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
                 >
                   Download CV
                 </CVDownload>
-                <InvisibleButton onClick={toggleTheme} style={{margin:"0 20px"}}>
+                <InvisibleButton
+                  onClick={toggleTheme}
+                  style={{ margin: "0 20px" }}
+                >
                   {theme?.name === "light" ? (
                     <MoonShieldSVG />
                   ) : (

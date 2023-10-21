@@ -57,8 +57,8 @@ const About: FC = () => {
 
   return (
     <>
-      <Container>
-        <TitleMain>About</TitleMain>
+      <Container className="start">
+        <TitleMain>About Me</TitleMain>
         <WrapperDiv1>
           <WrapperDiv2>
             <GradSVG />
