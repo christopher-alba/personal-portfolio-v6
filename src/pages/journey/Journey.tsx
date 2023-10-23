@@ -56,7 +56,7 @@ const Journey: FC = () => {
                 style={{
                   margin: "30px auto 30px 0",
                   textAlign: "right",
-                  zIndex: -1,
+                  zIndex: 0,
                 }}
               >
                 <H2Styled>{company.dateString}</H2Styled>

@@ -92,7 +92,7 @@ export const Timeline = styled("div")`
   height: 100%;
   width: 50px;
   background: ${({ theme }) => theme.colors.secondary1};
-  z-index: 0;
+  z-index: 1;
   @media (max-width: 500px) {
     z-index: -1;
     left: -50px;
