@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 200;
   }
   body {
+    overflow-x:hidden;
     background: ${({ theme }) => theme.colors.primary1};
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.secondary1} !important;

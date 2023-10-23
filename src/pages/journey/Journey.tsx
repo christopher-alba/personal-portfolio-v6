@@ -1,84 +1,83 @@
-import { FC, useContext, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { TitleMain } from "../../components/title";
 import { data } from "./data";
 import {
+  ButtonWrapper,
   CompanyWrapper,
   ContainerStyled,
-  CurrentCompanyWrapper,
+  H1Styled,
   H2Styled,
   LearnMoreButtonLink,
   PStyled,
   TechPill,
   TechWrapper,
+  Timeline,
 } from "./styled";
 import { Container } from "../../components/container";
-import { ThemeContext } from "styled-components";
-
 const Journey: FC = () => {
-  const theme = useContext(ThemeContext);
   useEffect(() => {
     document.getElementsByClassName("invisible-marker")[0].scrollIntoView();
   }, []);
   return (
-    <Container className="start">
+    <Container>
       <TitleMain>My Career Journey</TitleMain>
-      {data.map((company, index) => {
-        if (index === 0) {
-          return (
-            <CurrentCompanyWrapper>
-              <ContainerStyled>
+      <ContainerStyled className="start">
+        <Timeline />
+        {data.map((company, index) => {
+          const type = index % 2;
+          if (type > 0) {
+            return (
+              <CompanyWrapper
+                style={{
+                  margin: "30px 0 30px auto",
+                  textAlign: "left",
+                  zIndex: 1,
+                }}
+              >
                 <H2Styled>{company.dateString}</H2Styled>
-                <H2Styled style={{ color: theme?.colors.tertiary1 }}>
-                  {company.position}
-                </H2Styled>
-                <H2Styled>{company.nameShort}</H2Styled>
-                <PStyled>{company.name}</PStyled>
-                <br />
-                <p>{company.summary}</p>
+                <H2Styled>{company.name}</H2Styled>
+                <H1Styled>{company.position}</H1Styled>
+                <PStyled>{company.summary}</PStyled>
                 <TechWrapper>
                   {company.technologies.map((tech) => {
                     return <TechPill>{tech}</TechPill>;
                   })}
                 </TechWrapper>
-              </ContainerStyled>
-              <LearnMoreButtonLink
-                href={company.website}
-                target="_blank"
-                rel="noopener noreferrer"
+                <ButtonWrapper style={{ justifyContent: "flex-end" }}>
+                  <LearnMoreButtonLink href={company.website}>
+                    Learn More About {company.nameShort}
+                  </LearnMoreButtonLink>
+                </ButtonWrapper>
+              </CompanyWrapper>
+            );
+          } else {
+            return (
+              <CompanyWrapper
+                style={{
+                  margin: "30px auto 30px 0",
+                  textAlign: "right",
+                  zIndex: -1,
+                }}
               >
-                Learn More About {company.nameShort}
-              </LearnMoreButtonLink>
-            </CurrentCompanyWrapper>
-          );
-        } else {
-          return (
-            <CompanyWrapper>
-              <ContainerStyled>
                 <H2Styled>{company.dateString}</H2Styled>
-                <H2Styled style={{ color: theme?.colors.tertiary1 }}>
-                  {company.position}
-                </H2Styled>
-                <H2Styled>{company.nameShort}</H2Styled>
-                <PStyled>{company.name}</PStyled>
-                <br />
-                <p>{company.summary}</p>
-                <TechWrapper>
+                <H2Styled>{company.name}</H2Styled>
+                <H1Styled>{company.position}</H1Styled>
+                <PStyled>{company.summary}</PStyled>
+                <TechWrapper style={{ justifyContent: "flex-end" }}>
                   {company.technologies.map((tech) => {
                     return <TechPill>{tech}</TechPill>;
                   })}
                 </TechWrapper>
-              </ContainerStyled>
-              <LearnMoreButtonLink
-                href={company.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn More About {company.nameShort}
-              </LearnMoreButtonLink>
-            </CompanyWrapper>
-          );
-        }
-      })}
+                <ButtonWrapper>
+                  <LearnMoreButtonLink href={company.website}>
+                    Learn More About {company.nameShort}
+                  </LearnMoreButtonLink>
+                </ButtonWrapper>
+              </CompanyWrapper>
+            );
+          }
+        })}
+      </ContainerStyled>
     </Container>
   );
 };
