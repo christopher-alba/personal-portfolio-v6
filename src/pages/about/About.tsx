@@ -137,11 +137,11 @@ const About: FC = () => {
               </WrapperDiv5>
               <WrapperDiv5>
                 <MoneyIcon />
-                Practical Experience
+                Paid Experience
               </WrapperDiv5>
               <WrapperDiv5>
                 <PracticalIcon />
-                Paid Experience
+                Practical Experience
               </WrapperDiv5>
             </div>
           </TechInfo>
