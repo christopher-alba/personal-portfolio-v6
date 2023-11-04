@@ -35,6 +35,7 @@ export const CompanyWrapper = styled("div")`
 
 export const TechWrapper = styled("div")`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 20px;
   @media (max-width: 500px) {
@@ -68,8 +69,7 @@ export const LearnMoreButtonLink = styled("a")`
   text-decoration: none;
   color: white;
   background: ${({ theme }) => theme.colors.tertiary1};
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 5px;
   padding: 10px 20px;
   margin-top: 50px;
   width: fit-content;
@@ -81,6 +81,7 @@ export const LearnMoreButtonLink = styled("a")`
 
 export const ButtonWrapper = styled("div")`
   display: flex;
+  margin-bottom: 30px;
   @media (max-width: 500px) {
     justify-content: flex-start !important;
   }

@@ -1,15 +1,20 @@
 import { FC } from "react";
 import { SVGTopRight } from "./styled";
+import { AnimatedComponent, Lookup, SpringValue } from "@react-spring/web";
 
-const TopRight: FC<{ color1: string; color2: string }> = ({
-  color1,
-  color2,
-}) => {
+const TopRight: FC<{
+  color1: string;
+  color2: string;
+  as: AnimatedComponent<"svg">;
+  style: Lookup<SpringValue<any>>;
+}> = ({ color1, color2, as, style }) => {
   return (
     <SVGTopRight
+      as={as}
+      style={style}
       width="319"
       height="318"
-      viewBox="0 0 319 318"
+      viewBox="0 0 330 330"
       fill="none"
       xmlns="http://www.w3.org/2000/TopSVGTopRight"
     >

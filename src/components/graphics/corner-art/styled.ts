@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
 
-const CornerArtStyles = css`
+export const CornerArtStyles = css`
   height: 250px;
   width: 250px;
+  object-fit: contain;
   @media (max-width: 800px) {
     height: 125px;
     width: 125px;

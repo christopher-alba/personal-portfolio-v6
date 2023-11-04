@@ -1,15 +1,20 @@
 import { FC } from "react";
 import { SVGBottomRight } from "./styled";
+import { AnimatedComponent, Lookup, SpringValue } from "@react-spring/web";
 
-const BottomRight: FC<{ color1: string; color2: string }> = ({
-  color1,
-  color2,
-}) => {
+const BottomRight: FC<{
+  color1: string;
+  color2: string;
+  as: AnimatedComponent<"svg">;
+  style: Lookup<SpringValue<any>>;
+}> = ({ color1, color2, as, style }) => {
   return (
     <SVGBottomRight
+      as={as}
+      style={style}
       width="319"
       height="318"
-      viewBox="0 0 319 318"
+      viewBox="0 0 330 310"
       fill="none"
       xmlns="http://www.w3.org/2000/TopSVGBottomRight"
     >
